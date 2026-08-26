@@ -1,0 +1,34 @@
+{
+  "effective_config": {
+    "conc_unit_allowlist": [
+      "%",
+      "mg/100g"
+    ],
+    "attestation_source_blacklist": [
+      "lit2kg:gpt-3.5-finetuned",
+      "lit2kg:gpt-4",
+      "lit2kg:gpt-5.2"
+    ],
+    "synonym_hydration_dir": null,
+    "disable_v40_native_dict": false,
+    "flavor_descriptor_filter": false,
+    "include_ambiguous_attestations": false,
+    "lit2kg_filter_score_min": null,
+    "soft_quality_weight": false
+  },
+  "knobs": {
+    "FOOD_ATLAS_CONC_UNITS": null,
+    "FOOD_ATLAS_DISABLE_V40_NATIVE": null,
+    "FOOD_ATLAS_FLAVOR_FILTER": null,
+    "FOOD_ATLAS_INCLUDE_AMBIGUOUS": null,
+    "FOOD_ATLAS_SOURCE_BLACKLIST": null,
+    "FOOD_ATLAS_LIT2KG_FILTER_SCORE_MIN": null,
+    "FOOD_ATLAS_SOFT_QUALITY_WEIGHT": null,
+    "FOOD_ATLAS_SYN_HYDRATE_DIR": null
+  },
+  "foodatlas_files": {
+    "entities.parquet": "6896e5b99e03fefc",
+    "triplets.parquet": "30ebb387dba91373",
+    "attestations.parquet": "4bedb64a3d4987eb"
+  }
+}

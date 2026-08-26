@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{0.95}
+\caption{\textbf{Forbidding brand reasoning barely moves accuracy.} Original versus
+brand-blind system prompt, both re-run fresh in the same session so that model drift
+cancels; the user prompt is byte-identical between arms, and 932 pairs are scored
+in both. Flip rate is the fraction of pairs whose predicted winner changes. The
+brand-mention rate is measured on the same reasoning scan as
+Table~\ref{tab:recognition-signatures}.}
+\label{tab:brand-blind}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+Arm & Original & Brand-blind & $\Delta$ acc.\ & Flip rate & McNemar $p$ & Brand mentions \\
+\midrule
+Gemini 3.1 Pro & .639 & .634 & $-$.005 & 12.6\% & .712 & 10.8\% $\to$ 1.7\% \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,31 @@
+\begin{table}[t]
+\centering
+\providecommand{\tabci}{\footnotesize}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.0}
+\caption{\textbf{Recall metrics indicate the practical utility of these models for recommending the best formulations.} R@$k$ is the fraction of categories whose top-truth product is among the model's top $k$ predictions. Random rates are macro-averaged $\min(k, n_c)/n_c$ over 24 categories. \textbf{Bold} = best in column; $^\dag$ = CI overlaps the leader. Continuous ranking metrics in Table~\ref{tab:results-ranking}.}
+\label{tab:results-retrieval}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Model & R@1 & R@2 & R@3 \\
+\midrule
+Gemini 3.1 Pro & \makecell{.271$^\dag$ \\ {\tabci [.167,.431]}} & \makecell{\textbf{.514} \\ {\tabci [.472,.708]}} & \makecell{.578$^\dag$ \\ {\tabci [.487,.771]}} \\
+Qwen 3.5 397B & \makecell{.229$^\dag$ \\ {\tabci [.132,.354]}} & \makecell{.354$^\dag$ \\ {\tabci [.211,.483]}} & \makecell{.500$^\dag$ \\ {\tabci [.372,.656]}} \\
+MMRF (cosine) & \makecell{.208$^\dag$ \\ {\tabci [.104,.321]}} & \makecell{.292 \\ {\tabci [.139,.396]}} & \makecell{.333 \\ {\tabci [.164,.385]}} \\
+MMRF (L2) & \makecell{.222$^\dag$ \\ {\tabci [.104,.338]}} & \makecell{.403$^\dag$ \\ {\tabci [.288,.583]}} & \makecell{.542$^\dag$ \\ {\tabci [.438,.719]}} \\
+\midrule
+Ridge & \makecell{.250$^\dag$ \\ {\tabci [.181,.432]}} & \makecell{.292 \\ {\tabci [.121,.396]}} & \makecell{.542$^\dag$ \\ {\tabci [.486,.718]}} \\
+Bradley--Terry & \makecell{.250$^\dag$ \\ {\tabci [.177,.426]}} & \makecell{.292 \\ {\tabci [.125,.396]}} & \makecell{.375 \\ {\tabci [.158,.455]}} \\
+Hierarchical BT & \makecell{\textbf{.333} \\ {\tabci [.271,.534]}} & \makecell{.500$^\dag$ \\ {\tabci [.424,.727]}} & \makecell{\textbf{.667} \\ {\tabci [.625,.833]}} \\
+Kernel RankSVM & \makecell{.167 \\ {\tabci [.042,.250]}} & \makecell{.292 \\ {\tabci [.115,.396]}} & \makecell{.417 \\ {\tabci [.208,.521]}} \\
+LightGBM & \makecell{.292$^\dag$ \\ {\tabci [.250,.458]}} & \makecell{.333$^\dag$ \\ {\tabci [.208,.493]}} & \makecell{.458$^\dag$ \\ {\tabci [.333,.642]}} \\
+\midrule
+NNLS (BT+Gemini) & \makecell{.292$^\dag$ \\ {\tabci [.181,.451]}} & \makecell{.500$^\dag$ \\ {\tabci [.424,.691]}} & \makecell{.542$^\dag$ \\ {\tabci [.375,.684]}} \\
+Rank avg. & \makecell{.264$^\dag$ \\ {\tabci [.185,.420]}} & \makecell{.361$^\dag$ \\ {\tabci [.208,.483]}} & \makecell{.521$^\dag$ \\ {\tabci [.372,.671]}} \\
+Mean & \makecell{.167 \\ {\tabci [.035,.257]}} & \makecell{.375$^\dag$ \\ {\tabci [.257,.551]}} & \makecell{.417 \\ {\tabci [.188,.490]}} \\
+\midrule
+Random (analytical) & .121 & .242 & .363 \\
+\bottomrule
+\end{tabular}
+\end{table}

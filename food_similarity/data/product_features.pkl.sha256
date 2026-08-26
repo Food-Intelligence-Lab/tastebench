@@ -1,0 +1,5 @@
+# sha256 of the product_features.pkl that the published out-of-fold files were
+# trained from. This is a TRIPWIRE, not a cache: if it no longer matches,
+# the shipped numbers may not follow from the matrix on disk. Rewrite it
+# only after re-verifying. See shared/cache_provenance.py.
+2d6e94e1afb587dad77e890e425925540114502113264de5226d971a065332f5  food_similarity/data/product_features.pkl

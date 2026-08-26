@@ -1,0 +1,26 @@
+\begin{table}[t]
+\centering
+\providecommand{\tabci}{\footnotesize}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.0}
+\caption{\textbf{The trained GNN matches FART's overall accuracy but exhibits a distinct precision-recall tradeoff on umami.} Taste classification on the 2{,}254-molecule FART test split. The ``FART augmented + confidence'' test-time augmentation variant is excluded for single-checkpoint comparability. fp $=$ Morgan fingerprints; desc $=$ molecular descriptors. \textbf{Bold} = best in column; $^\dag$ = CI overlaps leader. McNemar's test on accuracy gap: $\chi^2 = 3.20, p = 0.07$.}
+\label{tab:molecular-prediction}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Model & Accuracy & Precision & Recall & F1 & AUROC \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Reported by~\citet{zimmermann2025chemical}}} \\
+\quad XGBoost (fp) & .899 & .817 & .740 & .766 & .852 \\
+\quad XGBoost (fp+desc) & .896 & \textbf{.884} & .740 & .778 & .851 \\
+\quad Balanced RF (fp) & .797 & .585 & .732 & .601 & .839 \\
+\quad FART & \makecell{.894$^\dag$ \\ {\tabci [.880,.906]}} & \makecell{.879 \\ {\tabci [.675,.897]}} & \makecell{.739$^\dag$ \\ {\tabci [.668,.869]}} & \makecell{.774$^\dag$ \\ {\tabci [.671,.875]}} & \makecell{.974$^\dag$ \\ {\tabci [.968,.979]}} \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{This work}} \\
+\quad GNN & \makecell{\textbf{.904} \\ {\tabci [.890,.915]}} & \makecell{.825 \\ {\tabci [.697,.895]}} & \makecell{\textbf{.813} \\ {\tabci [.683,.883]}} & \makecell{\textbf{.818} \\ {\tabci [.732,.876]}} & \makecell{\textbf{.978} \\ {\tabci [.968,.982]}} \\
+\quad ChemBERTa-2 (fine-tuned) & .842 & .643 & .710 & .671 & .950 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

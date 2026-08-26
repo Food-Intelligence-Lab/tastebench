@@ -1,0 +1,19 @@
+\captionof{table}{\textbf{Human-panelist baseline.} Pairwise ranking accuracy against the leave-one-out panel mean, on the within-block pairs each panelist rated, alongside the best model on those same pairs and on all within-category pairs. Individual panelists agree with each other only ${\approx}$.55 of the time, but the averaged panel mean is reliable (split-half .825), which is why a median panelist matches it on .650 of pairs: the meaningful band for models runs from .650 (median panelist) to .825 (the reliability ceiling). $n$ = 627 panelists, 4{,}664 panelist-block observations. All rows but the model's within-block accuracy are recomputed from shipped intermediates; that row is reproduced from the published analysis, since the block composition needed to recompute it is not released.}
+\label{tab:human-baseline}
+\begin{tabular}{@{}lc@{}}
+\toprule
+Method & Pairwise Acc.\ [95\% CI] \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Evaluated on within-block pairs}} \\
+\quad Individual panelist (median) & .650\textsuperscript{\dag} \\
+\quad Panel of 3 & .685 [.640,.725] \\
+\quad Panel of 5 & .725 [.686,.760] \\
+\quad Best model (within-block) & .661 [.604,.716] \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Evaluated on all within-category pairs}} \\
+\quad Best model (all pairs) & .683 [.653,.740] \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+{\scriptsize \textsuperscript{\dag}IQR: 0.50--0.75 across 4{,}664 panelist-block observations.}

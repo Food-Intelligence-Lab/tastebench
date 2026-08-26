@@ -1,0 +1,51 @@
+# TasteBench unified pip requirements (mirror of environment.yml).
+# Tested on Python 3.13.12 (the interpreter that produced the shipped
+# artifacts) and on Python 3.11.14, which re-renders them byte-identically:
+# confirmed from a clean checkout in a fresh 3.11 venv, where
+# `verify_paper.sh --check-diff` matched all 20 rendered outputs against
+# paper/RENDERED_SHA256.txt byte for byte.
+# numpy 1.26.4 has no cp313 wheel: on 3.13 pip builds it from source and a C
+# compiler is required; on 3.11 every pin below resolves to a wheel. Note two
+# TRANSITIVE dependencies of pyrfume -- eden-kernel and quantities -- build
+# from source on 3.11 regardless; both are pure-Python builds that need no C
+# compiler, but the install is not literally wheels-only.
+#
+# Install via:    pip install -r requirements.txt
+# Or, conda:      conda env create -f environment.yml
+
+# Core scientific stack
+numpy==1.26.4
+pandas==2.3.1
+scipy==1.16.1
+scikit-learn==1.7.1
+matplotlib==3.10.3
+seaborn==0.13.2
+joblib==1.5.1
+tqdm==4.67.1
+PyYAML==6.0.2
+python-dotenv==1.2.1
+requests==2.32.5
+rapidfuzz==3.14.3
+pyarrow==23.0.1
+krippendorff==0.8.2
+
+# Supervised models
+lightgbm==4.6.0
+
+# Deep learning + image / text encoders
+torch==2.11.0
+torchvision==0.26.0
+lightning==2.6.1
+transformers==4.57.6
+sentence-transformers==5.1.2
+huggingface-hub==0.36.2
+timm==1.0.26
+Pillow==10.4.0
+
+# Cheminformatics
+rdkit==2025.9.1
+chemprop==2.2.3
+pyrfume==0.20
+
+# Test runner
+pytest==7.4.0

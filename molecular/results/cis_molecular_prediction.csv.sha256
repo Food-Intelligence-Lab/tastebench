@@ -1,0 +1,4 @@
+# BCa inputs for cis_molecular_prediction.csv. Regenerate the cache if these
+# no longer match; see shared/cache_provenance.py.
+d7add5e5ecd6466f8288d74ecb0caf77dd166a8f4a011a8d270b16724c7fb079  molecular/results/fart_augmented_test/predictions.parquet
+f23086cbbadfd4ba6fda44d9a75d676a733c750ca27d06283ed35a3cdda37a4d  molecular/results/grid/run_3b6c4c9b82/fart_test_eval/predictions.parquet

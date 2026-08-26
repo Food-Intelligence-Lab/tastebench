@@ -1,0 +1,27 @@
+# SHA256 of input caches for NeurIPS 2026 supervised pipeline
+# Generated for repro-check; update alongside any cache regeneration.
+# Format: sha256  relative_path
+1a2fb7e7f70aada672c608dcd735674f302e250525b638d5971cd47454067998  shared/data/caches/chebi_smiles_cache.csv  # 178,866 bytes
+7814bd58edeca0f882d55adea702d41c31d5fb55236b4d4b662bae04cf9da62a  shared/data/caches/fart_classifier_dense_embeddings.pkl  # 431,547,181 bytes
+2d6f7d934de6ea052236be02833421644e000ad300cb18ddc1b59742aba0168a  shared/data/caches/fart_compound_embeddings.pkl  # 431,548,154 bytes
+e9e0b1eb3bdbea68ebe47878a125e3de9a5f0a5e39679bbe473d5fba0867b12e  shared/data/caches/fart_taste_probs_embeddings.pkl  # 15,862,725 bytes
+df9d69fd301c857b38d23c75637a005a4078d9e36153a8c9742307d5d8ac08da  shared/data/caches/sensory_descriptions.csv  # 1,204,803 bytes
+edd48aabe6cc640a273358c9029830702619383dcc54b2604942ee9f46771d40  shared/data/caches/smiles_cache.csv  # 13,132,000 bytes
+13605d7242e434b3fd12ace495db71d2d118764b303836490b207f6e9d4d0845  shared/data/caches/taste_gnn_best_compound_embeddings.pkl  # 176,902,170 bytes
+af5db453fafe973f865c9bb05957a6479ccfb30b234f1ebc4e5dc8dcc376cfce  shared/data/caches/taste_gnn_centered_compound_embeddings.pkl  # 176,902,170 bytes
+4bd7dda509d6c2920432e9eee9449d8213ea2969b19f4f5aca409f64668e1e7b  shared/data/caches/taste_gnn_regression_compound_embeddings.pkl  # 176,902,170 bytes
+78ac63f35511fde97a8fe680bb3329ab844cb72d303a7b53e91a6a6195b07400  human_baseline/results/verification/alpha_coincidence.csv  # verification bundle
+541d54f31bcbc4e7f2ee99a9d986cf0c6c9c7d72db9aaeceebc01902a529316f  human_baseline/results/verification/rater_pair_signs.csv  # verification bundle
+a1d4daee920b900dbf5a999c0b899361eaec937c9affc4157c3dfbce1fee7869  human_baseline/results/verification/block_group_stats.csv  # verification bundle
+2570095529c4c4c1e64f95ae76fc8ae7465dd91b8467833f6cd69f7b5fc26ad2  human_baseline/results/verification/split_half_iterations.csv  # verification bundle
+d3a51c50c71951b2b17beacfced16ecdad177fab26e3a3a8382a843f93f42f64  food_similarity/results/verification/recognition_flags.csv  # verification bundle
+44caecc3bdf4e1ff024e42c0158717b5f2d70b92733fddc59358b33c48b22951  food_similarity/results/oof_predictions/ablations/c2_oof_cached.csv  # verification bundle
+44caecc3bdf4e1ff024e42c0158717b5f2d70b92733fddc59358b33c48b22951  food_similarity/results/oof_predictions/ablations/c2_oof_reextracted_top3.csv  # verification bundle
+5faf736a76603780cd4b31001f7d0521206aafc1e8b5f639a06f11b325d68731  food_similarity/results/oof_predictions/ablations/c2_oof_top3_plus_additives.csv  # verification bundle
+c22eb3d80bf185942b57f68c32dcf086cc11b29045460e52be71a37c37054fae  shared/data/caches/compound_slice.parquet  # 34,298 bytes
+f33c145f43dfced6fbf355b53e81f19f8413dcb81f41eeeaa2453b0b433413bf  food_similarity/results/category_balanced/category_product_counts.csv  # category-balanced appendix (C05/C06)
+bb7a8951a285267c6d182bf981e1bc5bae1c03c292ccbd037f39a3500fb697cf  food_similarity/results/category_balanced/micro_vs_macro.csv  # category-balanced appendix (C05/C06)
+38b546bfd8aa9e5f6407f0bdccd683a96ff089dda6c460d05bcbf57d863ef516  food_similarity/results/category_balanced/exclusion_sweep.csv  # category-balanced appendix (C05/C06)
+38b98b45edac94fb20426eb778587280e7c18a550497f6a35af2d86d1907cd39  food_similarity/results/category_balanced/ranking_by_scheme.csv  # category-balanced appendix (C05/C06)
+3d7d06579e48a8840dfa375ae23abc2043bbae6254b70905c329aa2b8c8640eb  food_similarity/results/category_balanced/ranking_correlation.csv  # category-balanced appendix (C05/C06)
+7351064f6f70233ba52a73ad5e2505c86b18140d99b877365f653bdf602dd3e2  food_similarity/results/category_balanced/hierarchical_estimation.csv  # category-balanced appendix (C05/C06)

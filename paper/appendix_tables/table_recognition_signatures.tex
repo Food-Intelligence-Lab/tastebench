@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{0.95}
+\caption{\textbf{Recognition rarely surfaces, and it does not track accuracy.}
+Prevalence of each signature in the saved reasoning for the ingredients-plus-image
+configuration, and the accuracy difference between the pairs where it appears and the
+rest. Scored on the 931 pairs for which a graded judgment and a Bradley--Terry
+comparison both exist: of the 935 within-category pairs, three have tied panel means and
+are not gradable, and one more is unmatched. Fisher's exact test, two-sided; no
+signature reaches significance. Signatures are not mutually exclusive.}
+\label{tab:recognition-signatures}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Signature & Prevalence & $\Delta$ accuracy (flagged $-$ clean) & Fisher $p$ \\
+\midrule
+Product identification & 12.5\% & $+$.042 & .403 \\
+Brand mention (mostly analogy) & 10.2\% & $+$.013 & .820 \\
+External-performance recall & 2.4\% & $-$.026 & .821 \\
+Any signature & 14.2\% & $+$.032 & .489 \\
+\bottomrule
+\end{tabular}
+\end{table}
