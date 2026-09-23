@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 Anna Thomas
+Copyright (c) 2026 The TasteBench Authors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,34 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## Scope of this license
+
+The MIT terms above cover the **code** in this repository. They do not cover
+the datasets, which carry their own terms:
+
+- **NECTAR sensory data** — CC BY-NC 4.0, declared in `croissant/nectar.json`.
+  The panel ratings, ingredient lists and nutrition tables behind this
+  benchmark are gated and are not redistributed here; see `data/GATED.md`.
+- **Out-of-fold prediction files and derived results** under
+  `food_similarity/results/` and `molecular/results/` are derived from the
+  NECTAR data and inherit its CC BY-NC 4.0 terms, not the MIT terms.
+- **Third-party data redistributed in this release** — a derived FoodAtlas
+  v4.0 subset (Apache-2.0) and 349 FooDB concentration values, both inside
+  `shared/data/caches/compound_slice.parquet`. Attribution, the Apache-2.0
+  notice, and the required statement of changes are in
+  `THIRD_PARTY_NOTICES.md`. Note the FooDB values are free to redistribute
+  non-commercially but require the authors' permission for **commercial** use,
+  so the MIT grant above does not extend to them; `THIRD_PARTY_NOTICES.md`
+  explains how to rebuild the slice without them.
+- **FART molecular taste data** (Zimmermann et al. 2024) is MIT-licensed
+  upstream. The train/val/test splits are not in this tree; they are fetched
+  from `github.com/fart-lab/fart` at the commit pinned in
+  `molecular/data/PROVENANCE.md`, which also records the Kaggle redistribution
+  and its terms.
+
+Non-commercial dataset terms mean this repository as a whole is not
+MIT-licensed. Reuse the code freely under MIT; check the dataset terms before
+reusing the data.

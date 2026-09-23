@@ -1,0 +1,5 @@
+# BCa inputs for cis_per_category.csv. Regenerate the cache if these
+# no longer match; see shared/cache_provenance.py.
+44caecc3bdf4e1ff024e42c0158717b5f2d70b92733fddc59358b33c48b22951  food_similarity/results/oof_predictions/bradley_terry_SNCTI_bench.csv
+f95ad333058aa47a1bd6150740189e3f39c66a39823bb9f908ce1edb367bc8a1  food_similarity/results/oof_predictions/llm_gemini_3_1_pro_preview_ingredients_image.csv
+0b72faa8f5c56db9c65364a09836c46db858877a77dc87b828c8ae57a7b4e053  food_similarity/results/oof_predictions/nested_bt_gemini_nnls.csv

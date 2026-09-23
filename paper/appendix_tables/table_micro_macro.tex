@@ -1,0 +1,39 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{0.95}
+\caption{\textbf{Category-balanced evaluation preserves the ranking and the best
+model.} Pairwise accuracy on the 935 within-category pairs under three aggregation
+schemes. Micro is the paper's reported metric (Table~\ref{tab:results}); macro weights
+each of the 24 categories equally; EB is DerSimonian--Laird partial pooling toward the
+precision-weighted random-effects grand mean, with each category's sampling variance
+taken from its product count. $\Delta$ $=$ macro $-$ micro. Point estimates only:
+intervals for the macro and EB columns come from a within-category percentile bootstrap
+rather than the BCa procedure used elsewhere in the paper, so they are not comparable to
+the intervals in Table~\ref{tab:results} and are omitted here. Spearman correlation
+between the macro and micro orderings is .881.}
+\label{tab:micro-macro}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Model & Micro & Macro & $\Delta$ & Partial pooling (EB) \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{Ensemble (BT $+$ Gemini)}} \\
+\quad NNLS & \textbf{.683} & \textbf{.641} & $-$.042 & \textbf{.682} \\
+\quad Rank average & .671 & .629 & $-$.041 & .668 \\
+\quad Mean & .623 & .595 & $-$.028 & .613 \\
+\multicolumn{5}{@{}l}{\emph{Zero-shot LLMs}} \\
+\quad Gemini 3.1 Pro & .654 & .633 & $-$.021 & .666 \\
+\quad Qwen 3.5 397B-A17B & .630 & .611 & $-$.019 & .639 \\
+\multicolumn{5}{@{}l}{\emph{Supervised}} \\
+\quad Kernel RankSVM & .618 & .587 & $-$.031 & .612 \\
+\quad Hierarchical BT & .613 & .558 & $-$.055 & .595 \\
+\quad Bradley--Terry & .610 & .567 & $-$.043 & .567 \\
+\quad Ridge & .579 & .537 & $-$.042 & .540 \\
+\quad LightGBM & .558 & .532 & $-$.026 & .555 \\
+\multicolumn{5}{@{}l}{\emph{Unsupervised}} \\
+\quad MMRF (cosine) & .574 & .573 & $-$.002 & .589 \\
+\quad MMRF (L2) & .571 & .570 & $-$.000 & .600 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,31 @@
+\begin{table}[t]
+\centering
+\providecommand{\tabci}{\footnotesize}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.0}
+\caption{\textbf{Ensembles of supervised models and LLMs deliver the strongest continuous ranking on all three metrics.} Pairwise accuracy and rank-correlation metrics on 215 NECTAR plant-based products (935 within-category pairs; LOOCV) with 95\% BCa CIs. \textbf{Bold} = best in column; $^\dag$ = CI overlaps the leader (no significant difference at 95\%). Top-$k$ retrieval in Table~\ref{tab:results-retrieval}.}
+\label{tab:results-ranking}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Model & Pw.\ Acc. & $\rho_{\mathrm{S}}$ & $\tau_{\mathrm{K}}$ \\
+\midrule
+Gemini 3.1 Pro & \makecell{.654$^\dag$ \\ {\tabci [.618,.716]}} & \makecell{.370$^\dag$ \\ {\tabci [.248,.516]}} & \makecell{.298$^\dag$ \\ {\tabci [.180,.411]}} \\
+Qwen 3.5 397B & \makecell{.630$^\dag$ \\ {\tabci [.589,.690]}} & \makecell{.320$^\dag$ \\ {\tabci [.196,.462]}} & \makecell{.255$^\dag$ \\ {\tabci [.138,.365]}} \\
+MMRF (cosine) & \makecell{.574 \\ {\tabci [.527,.632]}} & \makecell{.212$^\dag$ \\ {\tabci [.072,.369]}} & \makecell{.151$^\dag$ \\ {\tabci [.018,.273]}} \\
+MMRF (L2) & \makecell{.571 \\ {\tabci [.522,.628]}} & \makecell{.202$^\dag$ \\ {\tabci [.061,.353]}} & \makecell{.153$^\dag$ \\ {\tabci [.026,.274]}} \\
+\midrule
+Ridge & \makecell{.579 \\ {\tabci [.534,.633]}} & \makecell{.160 \\ {\tabci [.028,.301]}} & \makecell{.115$^\dag$ \\ {\tabci [$-.005$,.227]}} \\
+Bradley--Terry & \makecell{.610$^\dag$ \\ {\tabci [.571,.662]}} & \makecell{.266$^\dag$ \\ {\tabci [.156,.404]}} & \makecell{.178$^\dag$ \\ {\tabci [.064,.287]}} \\
+Hierarchical BT & \makecell{.613$^\dag$ \\ {\tabci [.570,.671]}} & \makecell{.228$^\dag$ \\ {\tabci [.098,.382]}} & \makecell{.165$^\dag$ \\ {\tabci [.044,.285]}} \\
+Kernel RankSVM & \makecell{.618$^\dag$ \\ {\tabci [.578,.675]}} & \makecell{.288$^\dag$ \\ {\tabci [.166,.436]}} & \makecell{.206$^\dag$ \\ {\tabci [.086,.322]}} \\
+LightGBM & \makecell{.558 \\ {\tabci [.507,.615]}} & \makecell{.136 \\ {\tabci [$-.005$,.293]}} & \makecell{.092$^\dag$ \\ {\tabci [$-.033$,.217]}} \\
+\midrule
+NNLS (BT+Gemini) & \makecell{\textbf{.683} \\ {\tabci [.653,.740]}} & \makecell{\textbf{.417} \\ {\tabci [.311,.552]}} & \makecell{\textbf{.322} \\ {\tabci [.208,.428]}} \\
+Rank avg. & \makecell{.671$^\dag$ \\ {\tabci [.641,.724]}} & \makecell{.398$^\dag$ \\ {\tabci [.292,.532]}} & \makecell{.304$^\dag$ \\ {\tabci [.191,.409]}} \\
+Mean & \makecell{.623$^\dag$ \\ {\tabci [.588,.678]}} & \makecell{.310$^\dag$ \\ {\tabci [.202,.451]}} & \makecell{.216$^\dag$ \\ {\tabci [.101,.321]}} \\
+\midrule
+Random (analytical) & .500 & .000 & .000 \\
+\bottomrule
+\end{tabular}
+\end{table}

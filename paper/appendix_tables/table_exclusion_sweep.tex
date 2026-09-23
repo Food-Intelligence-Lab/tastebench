@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{0.95}
+\caption{\textbf{Dropping small categories does not change the best model.} The best
+model (NNLS over Bradley--Terry and Gemini 3.1 Pro) as categories below each
+product-count threshold are excluded. Rank is among the twelve models of
+Table~\ref{tab:micro-macro}, under micro and macro averaging respectively. The
+smallest category has 5 products, so the first row is the full benchmark.}
+\label{tab:exclusion-sweep}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+Min.\ products & Categories kept & Micro & Macro & Rank (micro / macro) \\
+\midrule
+5 & 24 & .683 & .641 & 1 / 1 \\
+6 & 21 & .689 & .661 & 1 / 1 \\
+7 & 20 & .694 & .674 & 1 / 1 \\
+8 & 18 & .694 & .672 & 1 / 1 \\
+9 & 16 & .701 & .682 & 1 / 1 \\
+10 & 12 & .700 & .674 & 1 / 1 \\
+\bottomrule
+\end{tabular}
+\end{table}

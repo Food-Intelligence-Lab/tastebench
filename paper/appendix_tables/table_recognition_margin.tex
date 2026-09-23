@@ -1,0 +1,26 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{0.95}
+\caption{\textbf{The LLM's margin is not concentrated where it recognized the
+product.} Per-pair margin of Gemini 3.1 Pro over Bradley--Terry, split by whether the
+reasoning identified the product. Bradley--Terry sees only features, so it holds pair
+difficulty constant. Over these 931 pairs Gemini scores .662 and
+Bradley--Terry .613, a margin of $+$.048; both differ slightly
+from Table~\ref{tab:results}, which scores the same models over all 935 pairs
+including the three ties. Bradley--Terry also improves on the recognized subset
+(.605 to .672), which is what identifies those pairs as easier rather
+than leaked. The interaction interval is a within-category bootstrap.}
+\label{tab:recognition-margin}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Split & $n$ & Gemini $-$ Bradley--Terry \\
+\midrule
+Recognized & 116 & $+$.026 \\
+Not recognized & 815 & $+$.052 \\
+\midrule
+Interaction & & $-$.026, 95\% CI [$-$.159,$+$.108] (n.s.) \\
+\bottomrule
+\end{tabular}
+\end{table}

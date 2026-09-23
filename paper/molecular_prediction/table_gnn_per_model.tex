@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{0.95}
+\caption{\textbf{Molecular-encoder quality does not transfer to product-level ranking.} Pairwise accuracy on 215 NECTAR products (935 within-category pairs; LOOCV) with the compound block supplied by each of three encoders, every other component held fixed: FoodAtlas v4.0, log-concentration ingredient aggregation, and the same scoring pipeline throughout. The three span .84--.90 molecular-classification accuracy (Table~\ref{tab:molecular-prediction}) yet are statistically indistinguishable here. 95\% BCa CIs (10{,}000 resamples). $\Delta$ is relative to FART. Every $\Delta$ lies inside the corresponding interval and the direction is not consistent across models, so these are ties rather than a ranking. The encoders are not tuned symmetrically --- FART is pretrained and untuned, the D-MPNN grid swept depth, dropout and class weighting at fixed learning rate, and ChemBERTa-2 swept learning rate --- but the intervals ($\approx\pm.05$) dwarf any plausible tuning effect.}
+\label{tab:encoder-transfer}
+\begin{tabular}{lccccc}
+\toprule
+Model & C $=$ FART & C $=$ GNN & C $=$ ChemBERTa-2 & $\Delta_{\text{GNN}}$ & $\Delta_{\text{Chem}}$ \\
+\midrule
+\multicolumn{6}{@{}l}{\emph{Unsupervised}} \\
+\quad MMRF (cosine) & \textbf{.574} {\scriptsize [.528,.635]} & .566 {\scriptsize [.518,.624]} & .573 {\scriptsize [.526,.633]} & $-$.008 & $-$.002 \\
+\quad MMRF (L2) & \textbf{.571} {\scriptsize [.524,.632]} & .563 {\scriptsize [.518,.619]} & .568 {\scriptsize [.522,.628]} & $-$.008 & $-$.002 \\
+\multicolumn{6}{@{}l}{\emph{Supervised -- linear}} \\
+\quad Ridge & .579 {\scriptsize [.534,.632]} & .561 {\scriptsize [.513,.614]} & \textbf{.598} {\scriptsize [.554,.655]} & $-$.018 & $+$.019 \\
+\multicolumn{6}{@{}l}{\emph{Supervised -- pairwise}} \\
+\quad Bradley--Terry & .610 {\scriptsize [.571,.661]} & .617 {\scriptsize [.578,.671]} & \textbf{.640} {\scriptsize [.604,.693]} & $+$.006 & $+$.030 \\
+\quad Hierarchical BT & .613 {\scriptsize [.570,.670]} & .630 {\scriptsize [.588,.689]} & \textbf{.639} {\scriptsize [.599,.698]} & $+$.017 & $+$.026 \\
+\quad Kernel RankSVM & .618 {\scriptsize [.579,.674]} & \textbf{.627} {\scriptsize [.589,.682]} & .610 {\scriptsize [.570,.664]} & $+$.010 & $-$.007 \\
+\multicolumn{6}{@{}l}{\emph{Supervised -- nonlinear}} \\
+\quad LightGBM & \textbf{.558} {\scriptsize [.509,.615]} & .515 {\scriptsize [.459,.571]} & .535 {\scriptsize [.483,.592]} & $-$.043 & $-$.022 \\
+\multicolumn{6}{@{}l}{\emph{Ensemble (BT + Gemini)}} \\
+\quad NNLS & .683 {\scriptsize [.654,.740]} & .673 {\scriptsize [.641,.730]} & \textbf{.684} {\scriptsize [.655,.737]} & $-$.010 & $+$.001 \\
+\quad Rank average & .671 {\scriptsize [.641,.725]} & .671 {\scriptsize [.639,.725]} & \textbf{.685} {\scriptsize [.656,.743]} & $+$.000 & $+$.014 \\
+\quad Mean & .623 {\scriptsize [.587,.675]} & .635 {\scriptsize [.599,.691]} & \textbf{.641} {\scriptsize [.606,.695]} & $+$.012 & $+$.018 \\
+\bottomrule
+\end{tabular}
+\end{table}

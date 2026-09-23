@@ -1,0 +1,13 @@
+model,micro,naive_macro,hierarchical
+NNLS (BT+Gemini),0.683,0.641,0.682
+Rank avg.,0.671,0.629,0.668
+Gemini 3.1 Pro,0.654,0.633,0.666
+Qwen 3.5 397B,0.63,0.611,0.639
+Mean,0.623,0.595,0.613
+Kernel RankSVM,0.618,0.587,0.612
+MMRF (L2),0.571,0.57,0.6
+Hierarchical BT,0.613,0.558,0.595
+MMRF (cosine),0.574,0.573,0.589
+Bradley-Terry,0.61,0.567,0.567
+LightGBM,0.558,0.532,0.555
+Ridge,0.579,0.537,0.54
